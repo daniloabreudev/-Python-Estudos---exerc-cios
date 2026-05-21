@@ -39,7 +39,7 @@ class ControleRemoto:
     def mostrar_tv(self):
         conteudo =''
         if not self.ligado:
-            conteudo = "[red]:prohibited: A tv está desligada"
+            conteudo = "[red]:prohibited: 9A tv está desligada"
         else:
             conteudo ='CANAL  = '
             for canal in range(ControleRemoto.canal_min,ControleRemoto.canal_max+1):
