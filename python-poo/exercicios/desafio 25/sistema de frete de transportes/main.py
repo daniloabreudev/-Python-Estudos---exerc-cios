@@ -1,22 +1,6 @@
-from abc import ABC, abstractmethod
-
-
-class Transporte(ABC):
-    def __init__(self,distancia,frete):
-        self.distancia = distancia
-        self.frete =frete
-
-    @abstractmethod
-    def calc_frete(self):
-        pass
-
-
-class Moto(Transporte):
-    def __init__(self,distancia,peso,fator):
-        self.fator = fator
-
-    def calc_frete(self):
-        pass
+from fretes import *
+from rich import print
+from rich.table import Table
 
 def main():
     dist= 80
@@ -31,17 +15,6 @@ def main():
         tabela.add_row(f"{dist}km",f"{type(item).__name__}",f"{item.calc_frete()}")
     print(tabela)
 
-class Caminhao(Transporte):
-    def __init__(self, taxa=0):
-        self.fator = taxa
 
-    def calc_frete(self):
-        pass
-
-
-class Drone(Transporte):
-    def __init__(self, taxa=0):
-        self.fator = taxa
-
-    def calc_frete(self):
-        pass
+if __name__ == "__main__":
+    main()
