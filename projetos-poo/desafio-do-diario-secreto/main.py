@@ -8,8 +8,8 @@ def main():
     meudiario.escrever("Segunda mensagem")
 
     try:
-        meudiario.ler("ceV!@")
-    except exception as e:
+        meudiario.ler("cesV!@")
+    except Exception as e:
         print(f"ERRO: {e}")
 
 
