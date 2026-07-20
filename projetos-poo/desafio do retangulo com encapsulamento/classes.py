@@ -62,4 +62,4 @@ class Retangulo:
         if isinstance(valores[1],float) or isinstance(valores[1], int):
             self.altura = valores[1]
         else:
-            raise TypeError("A altura deve ser um npumero")
+            raise TypeError("A altura deve ser um numero")
