@@ -22,4 +22,9 @@ class Diario:
     def senha(self):
         raise PermissionError(f"Ninguém tem permissão de ver a senha")
 
+    @senha.setter
+    def senha(self,novasenha):
+        if isinstance(novasenha,str) and len(novasenha) > 0:
+            self.__senha == novasenha9
+
 
