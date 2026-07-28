@@ -1,7 +1,7 @@
 from rich import print
 
 class Diario:
-    def __init__(self, senhamestra = "ceV!@"):
+    def __init__(self, senhamestra = "teleflix"):
         self.__segredos = []
         self.__senha = senhamestra.strip()
 
@@ -23,8 +23,9 @@ class Diario:
         raise PermissionError(f"Ninguém tem permissão de ver a senha")
 
     @senha.setter
-    def senha(self,novasenha):
-        if isinstance(novasenha,str) and len(novasenha) > 0:
-            self.__senha == novasenha9
-
+    def senha(self, nova_senha):
+        if len(nova_senha) < 8 :
+            raise ValueError(f"Tente novamente. A senha precisa ter no mínimo 8 caracteres!")
+        else:
+            self.__senha = nova_senha
 

@@ -6,7 +6,8 @@ def main():
     meudiario.escrever("Segunda mensagem")
 
     try:
-        meudiario.ler("cesV!@")
+        meudiario.senha = "minhasenha"
+        meudiario.ler("minhasenha")
     except Exception as e:
         print(f"ERRO: {e}")
 
