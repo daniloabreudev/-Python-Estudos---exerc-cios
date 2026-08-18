@@ -8,7 +8,6 @@ class Mae:
     def fritar_coxinha(self):
         print(f"{self.nome} frita coxinha no òleo de Soja")
 
-
 class Filha(Mae):
     def fazer_pudim(self):
         print(f"{self.nome} faz com Leite ninho e NUtella")
