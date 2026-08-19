@@ -50,3 +50,11 @@ class Casa:
     def __str__(self):
         return f"Era uma casa muito engraçada..."
 
+# DUCK TYPING
+
+def tente_dobrar(objeto):
+    try:
+        objeto.dobrar()
+    except:
+        print(f"Tive dificuldades para dobrar o objeto {objeto.__class__.__name__}")
+
