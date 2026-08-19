@@ -4,10 +4,11 @@ class Numero:
         self.valor = valor
 
     def dobrar(self):
-        pass
+        self.valor *=2
 
     def __str__(self):
         return f"Tenho o valor {self.valor} dentro do número"
+
 
 class Texto:
 
@@ -15,7 +16,7 @@ class Texto:
         self.texto = txt
 
     def dobrar(self):
-        pass
+        self.texto += self.texto
 
     def __str__(self):
         return f"Tenho o texto {self.texto} dentro do texto"
@@ -26,7 +27,7 @@ class Lista:
         self.valores = lst
 
     def dobrar(self):
-        pass
+        self.valores += self.valores
 
     def __str__(self):
         return f"Tenho a lista {self.valores} dentro da lista"
@@ -37,7 +38,7 @@ class Papel:
         self.dobrado = False
 
     def dobrar(self):
-        pass
+        self.dobrado = True
 
     def __str__(self):
         return f"O papel está dobrado ? {self.dobrado}"
