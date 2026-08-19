@@ -7,6 +7,12 @@ def main():
     d = Papel()
     e = Casa()
 
+    tente_dobrar(a)
+    tente_dobrar(b)
+    tente_dobrar(c)
+    tente_dobrar(d)
+    tente_dobrar(e)
+
     print(a)
     print(b)
     print(c)
