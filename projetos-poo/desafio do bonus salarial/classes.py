@@ -3,7 +3,7 @@ from abc import ABC,abstractmethod
 class Funcionario(ABC):
     def __init__(self, nome:str = '',salario :float|int = 0 ):
         self.nome = nome
-        self._salario = salario
+        self.__salario = salario
         self.bonus = 0
 
     @abstractmethod

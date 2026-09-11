@@ -9,7 +9,7 @@ def main():
     fazer_calculo(b)
     fazer_calculo(c)
 
-    print(a.calcular_bonus())
+    print(a)
     print(b)
     print(c)
 
