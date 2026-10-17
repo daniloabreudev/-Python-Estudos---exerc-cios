@@ -1,8 +1,8 @@
 class Produto:
     def __init__(self, nome, preco):
         self.nome = nome
-        self._preco = 0
-        self.preco = preco
+        self._preco = preco
+
 
     @property
     def preco(self):
