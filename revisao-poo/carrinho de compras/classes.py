@@ -1,22 +1,37 @@
+import locale
+locale.setlocale(locale.LC_ALL, "Portuguese_Brazil.1252")
+
 class Produto:
-    def __init__(self, nome: str, preco:int|float):
+    def __init__(self, nome: str, preco:float=0):
         self.nome = nome
-        self._preco = 0.0
         self.preco = preco
 
+    def __str__(self) -> str:
+        return f"{self.nome} ({formata_dinheiro(self.preco)}))"
+
+class Carrinho:
+    def __init__(self, produtos:list = None):
+        self.produtos = produtos if produtos else []
 
     @property
-    def preco(self):
-        return f"R$ {self._preco:.2f}"
+    def total(self):
+        return sum(p.preco for p in self.produtos)
 
-    @preco.setter
-    def preco(self, valor):
-        if valor is None or valor <=0 :
-            print("O valor está iválido")
+
+    def __add__(self, other):
+        if isinstance(other, Produto):
+            return Carrinho(self.produtos + [other])
+        elif isinstance(other, Carrinho):
+            return Carrinho(self.produtos + other.produtos)
         else:
-            self._preco = valor
+            raise TypeError("Você tentou adicionar algo inválido ao carrinho")
+
+    def  __str__(self):
+        linha = '\n' + '-' *30
+        itens = "\n".join(str(p) for p in self.produtos)
+        return f"{itens}{linha}\nTotal: {formata_dinheiro(self.total)}"
 
 
-    def __str__(self):
-        divisor = "-" *15
-        return f"{divisor}\n{self.nome} ({self.preco})\n{divisor}"
+
+def formata_dinheiro(valor:float):
+    return locale.currency(valor, grouping=True)
