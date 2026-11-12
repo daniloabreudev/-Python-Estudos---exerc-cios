@@ -13,6 +13,7 @@ def exibir_menu():
 
 
 def main():
+
     if not criar_banco():
         print("Algum problema aconteceu ao criar o banco")
         raise SystemExit
